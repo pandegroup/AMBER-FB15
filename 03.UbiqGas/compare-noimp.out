@@ -32,19 +32,19 @@ Constraints HBonds
 #========================================================#
 BOND                      497.9206856 
 ANGLE                     1626.0852408 
-DIHED                     1286.4787472 
+DIHED                     1286.4783288 
 1-4 NB                    1019.5391288 
 1-4 EEL                   13992.3947184 
 VDWAALS                   -1490.8809544 
 EELEC                     -22464.7867736 
-EPTOT                     -5533.2487888 
+EPTOT                     -5533.2496256 
 ----------------------------------------------------------
                         Bond         497.920485   --vs--       BOND         497.920686 Diff:     0.000201
                        Angle        1626.083899   --vs--      ANGLE        1626.085241 Diff:     0.001342
-   Proper-Dih.+Improper-Dih.        1286.478051   --vs--      DIHED        1286.478747 Diff:     0.000696
+   Proper-Dih.+Improper-Dih.        1286.478051   --vs--      DIHED        1286.478329 Diff:     0.000278
                        LJ-14        1019.535989   --vs--     1-4 NB        1019.539129 Diff:     0.003140
                   Coulomb-14       13992.318631   --vs--    1-4 EEL       13992.394718 Diff:     0.076087
        LJ-(SR)+Disper.-corr.       -1490.887302   --vs--    VDWAALS       -1490.880954 Diff:     0.006348
    Coulomb-(SR)+Coul.-recip.      -22465.563001   --vs--      EELEC      -22464.786774 Diff:     0.776227
-                   Potential       -5534.113248   --vs--      EPTOT       -5533.248789 Diff:     0.864459
-RMS / Max Force Difference (kJ/mol/nm):  5.266602e-02  4.955365e-01
+                   Potential       -5534.113248   --vs--      EPTOT       -5533.249626 Diff:     0.863622
+RMS / Max Force Difference (kJ/mol/nm):  5.268272e-02  4.955365e-01

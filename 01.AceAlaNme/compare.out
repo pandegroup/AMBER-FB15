@@ -38,7 +38,7 @@ DIHED                     46.3005624
 1-4 EEL                   232.7592672 
 VDWAALS                   -6.0211944 
 EELEC                     -364.36364 
-EPTOT                     -16.198356 
+EPTOT                     -16.1979376 
 ----------------------------------------------------------
                         Bond           4.454114   --vs--       BOND           4.454286 Diff:     0.000172
                        Angle          48.233192   --vs--      ANGLE          48.233152 Diff:    -0.000040
@@ -47,5 +47,5 @@ EPTOT                     -16.198356
                   Coulomb-14         232.757849   --vs--    1-4 EEL         232.759267 Diff:     0.001418
        LJ-(SR)+Disper.-corr.          -6.021047   --vs--    VDWAALS          -6.021194 Diff:    -0.000147
    Coulomb-(SR)+Coul.-recip.        -364.376191   --vs--      EELEC        -364.363640 Diff:     0.012551
-                   Potential         -18.636222   --vs--      EPTOT         -16.198356 Diff:     2.437866
-RMS / Max Force Difference (kJ/mol/nm):  4.818521e+01  1.415542e+02
+                   Potential         -18.636222   --vs--      EPTOT         -16.197938 Diff:     2.438284
+RMS / Max Force Difference (kJ/mol/nm):  4.818525e+01  1.415538e+02

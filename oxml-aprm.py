@@ -86,8 +86,8 @@ A99_Hyb = OrderedDict([("H",  ("H", "sp3")), ("HO", ("H", "sp3")), ("HS", ("H", 
 fout = open('leaprc.fb15','w')
 print >> fout, """logFile leap.log
 #
-# ----- leaprc for loading the fb15 (Wang et al., ForceBalance-2015) force field
-#       modified with added atom types for amino acid side chains.
+# ----- leaprc for loading the AMBER-FB15 force field
+#       with added atom types for amino acid side chains.
 #
 #	load atom type hybridizations
 #
@@ -110,6 +110,7 @@ print >> fout, "}"
 print >> fout, """
 #
 #	Load the main parameter set.
+#       The TIP3P-FB water model is used.
 #
 parm99 = loadamberparams parm99.dat
 mods = loadamberparams frcmod.fb15
@@ -120,7 +121,7 @@ mods2 = loadamberparams frcmod.tip3pfb
 loadOff all_nucleic94.lib
 #
 #	Load main chain and terminating 
-#	amino acid libraries (i.e. ff94 libs)
+#	amino acid libraries (modified from ff94)
 #
 loadOff all_aminofb15.lib
 loadOff all_aminoctfb15.lib
