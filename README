@@ -3,7 +3,9 @@
 This repository contains the following:
 
 1) AMBER-FB15 protein force field parameters in Gromacs, OpenMM and
-AMBER format, contained in "Params".
+AMBER format, contained in "Params".  These improved force field
+parameters were derived using ForceBalance and recommended for use
+with the TIP3P-FB water model (also included).
 
 To use the new parameters in AMBER, run the following to install
 the parameters.  Make sure AMBERHOME is set first:
