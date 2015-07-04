@@ -1,0 +1,52 @@
+'contact' cannot be imported (topology tools will be slow.)Using double precision GROMACS version 4
+GMX resnames not in AMBER: CA CL CS DAB HO4 HOH HYP IB+ K LI MG NA NH2 ORN RB URE ZN
+AMBER resnames not in GMX: 
+Executing process: [92mpdb2gmx -ff amberfb15ni -f protein-gmx.pdb        [0m Stdin: 1\n
+Executing process: [92mtleap -f stage.leap                               [0m
+Executing process: [92mgrompp_d -f eq.mdp -o eq.tpr                      [0m
+Executing process: [92mmdrun_d -nt 1 -v -stepout 10 -deffnm eq           [0m
+Executing process: [92mtrjconv_d -s eq.tpr -f eq.trr -o eq.gro -ndec 9 -pbc mol -dump 1[0m Stdin: 0\n
+Executing process: [92m/home/leeping/opt/gromacs/bin/grompp_d -f enerfrc.mdp -c constrained.gro -p topol.top -maxwarn 1[0m
+Executing process: [92m/home/leeping/opt/gromacs/bin/gmxdump_d -s topol.tpr -sys[0m
+Executing process: [92m/home/leeping/opt/gromacs/bin/mdrun_d -nt 1 -rerunvsite -rerun constrained.gro[0m
+Executing process: [92m/home/leeping/opt/gromacs/bin/g_energy_d -xvg no -f ener.edr -o energy.xvg[0m Stdin: Potential
+Executing process: [92m/home/leeping/opt/gromacs/bin/g_traj_d -xvg no -s topol.tpr -f traj.trr -of force.xvg -fp[0m Stdin: System
+Executing process: [92m/home/leeping/opt/gromacs/bin/g_energy_d -f ener.edr -xvg no[0m Stdin: Total-Energy\n
+Executing process: [92m/home/leeping/opt/gromacs/bin/g_energy_d -f ener.edr -o energy.xvg -xvg no[0m Stdin: Bond\nAngle\nProper-Dih.\nLJ-14\nCoulomb-14\nLJ-(SR)\nDisper.-corr.\nCoulomb-(SR)\nCoul.-recip.\nPotential\nKinetic-En.\nTotal-Energy
+#========================================================#
+#| [92m             GROMACS energy components              [0m |#
+#========================================================#
+Bond                      1759.853657 
+Angle                     5048.748762 
+Proper-Dih.               3090.100292 
+LJ-14                     2838.228322 
+Coulomb-14                29218.375319 
+LJ-(SR)                   59297.20205 
+Disper.-corr.             -1659.4903 
+Coulomb-(SR)              -357139.024617 
+Coul.-recip.              -83590.336653 
+Potential                 -341136.343169 
+----------------------------------------------------------
+Defines: {}
+Constraints HBonds
+#========================================================#
+#| [92m              AMBER energy components               [0m |#
+#========================================================#
+BOND                      1759.8539968 
+ANGLE                     5048.7524672 
+DIHED                     3090.1019864 
+1-4 NB                    2838.2348096 
+1-4 EEL                   29218.5343032 
+VDWAALS                   57622.0597152 
+EELEC                     -440716.807898 
+EPTOT                     -341139.270202 
+----------------------------------------------------------
+                        Bond        1759.853657   --vs--       BOND        1759.853997 Diff:     0.000340
+                       Angle        5048.748762   --vs--      ANGLE        5048.752467 Diff:     0.003705
+   Proper-Dih.+Improper-Dih.        3090.100292   --vs--      DIHED        3090.101986 Diff:     0.001694
+                       LJ-14        2838.228322   --vs--     1-4 NB        2838.234810 Diff:     0.006488
+                  Coulomb-14       29218.375319   --vs--    1-4 EEL       29218.534303 Diff:     0.158984
+       LJ-(SR)+Disper.-corr.       57637.711750   --vs--    VDWAALS       57622.059715 Diff:   -15.652035
+   Coulomb-(SR)+Coul.-recip.     -440729.361270   --vs--      EELEC     -440716.807898 Diff:    12.553372
+                   Potential     -341136.343169   --vs--      EPTOT     -341139.270202 Diff:    -2.927033
+RMS / Max Force Difference (kJ/mol/nm):  3.807582e-01  1.617698e+00

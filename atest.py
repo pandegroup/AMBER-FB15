@@ -22,7 +22,7 @@ import os, sys, re, copy
 import argparse
 
 # ForceBalance convenience functions
-from forcebalance.nifty import printcool, printcool_dictionary, _exec, which, wopen, isint, isfloat, logger
+from nifty import printcool, printcool_dictionary, _exec, which, wopen, isint, isfloat, logger
 # Only needed for writing constrained .gro files
 # from molecule import Molecule
 

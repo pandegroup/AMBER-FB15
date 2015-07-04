@@ -3,9 +3,8 @@
 import os, sys, re
 import numpy as np
 import copy
-from forcebalance.molecule import Molecule
-from forcebalance.nifty import _exec, printcool_dictionary
-import sander
+from molecule import Molecule
+from nifty import _exec, printcool_dictionary
 import parmed
 from collections import OrderedDict
 from atest import Calculate_GMX, Calculate_AMBER, interpret_mdp
@@ -240,9 +239,9 @@ for i, (anum_amber, anum_gro) in enumerate(zip(anumMap_amb, anumMap_gro)):
     # anumMap_amb_gro[anum_amber] = anum_gro
 
 # Run a quick MD simulation in Gromacs 
-# if not os.path.exists("eq.gro"):
 _exec("grompp_d -f eq.mdp -o eq.tpr")
-_exec("mdrun_d -nt 1 -v -stepout 10 -deffnm eq", print_to_screen=True)
+# You can set print_to_screen=True to see how fast it's going
+_exec("mdrun_d -nt 1 -v -stepout 10 -deffnm eq", print_to_screen=False)
 _exec("trjconv_d -s eq.tpr -f eq.trr -o eq.gro -ndec 9 -pbc mol -dump 1", stdin="0\n")
 
 # Confirm that constraints are satisfied
@@ -254,7 +253,6 @@ plat = mm.Platform.getPlatformByName('Reference')
 simul = app.Simulation(OMM_prmtop.topology, system, integ)
 simul.context.setPositions(OMM_eqgro.positions)
 simul.context.applyConstraints(1e-12)
-# Obtain OpenMM potential energy
 state = simul.context.getState(getPositions=True)
 pos = np.array(state.getPositions().value_in_unit(u.angstrom)).reshape(-1,3)
 M = Molecule('eq.gro')
