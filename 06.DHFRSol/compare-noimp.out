@@ -17,36 +17,36 @@ Executing process: [92m/home/leeping/opt/gromacs/bin/g_energy_d -f ener.edr -o 
 #| [92m             GROMACS energy components              [0m |#
 #========================================================#
 Bond                      1759.853657 
-Angle                     5048.748784 
-Proper-Dih.               3090.100298 
+Angle                     5048.748763 
+Proper-Dih.               3090.100293 
 LJ-14                     2838.228322 
-Coulomb-14                29218.375414 
-LJ-(SR)                   59297.202389 
+Coulomb-14                29218.375327 
+LJ-(SR)                   59297.202398 
 Disper.-corr.             -1659.4903 
-Coulomb-(SR)              -357139.023901 
-Coul.-recip.              -83590.336317 
-Potential                 -341136.341655 
+Coulomb-(SR)              -357139.024869 
+Coul.-recip.              -83590.336666 
+Potential                 -341136.343074 
 ----------------------------------------------------------
 Defines: {}
 Constraints HBonds
 #========================================================#
 #| [92m              AMBER energy components               [0m |#
 #========================================================#
-BOND                      1759.8539968 
+BOND                      1759.8878872 
 ANGLE                     5048.7524672 
-DIHED                     3090.1040784 
+DIHED                     3090.1074256 
 1-4 NB                    2838.2348096 
 1-4 EEL                   29218.5343032 
 VDWAALS                   57622.0597152 
-EELEC                     -440716.806643 
-EPTOT                     -341139.266854 
+EELEC                     -440716.807898 
+EPTOT                     -341139.230872 
 ----------------------------------------------------------
-                        Bond        1759.853657   --vs--       BOND        1759.853997 Diff:     0.000340
-                       Angle        5048.748784   --vs--      ANGLE        5048.752467 Diff:     0.003683
-   Proper-Dih.+Improper-Dih.        3090.100298   --vs--      DIHED        3090.104078 Diff:     0.003780
+                        Bond        1759.853657   --vs--       BOND        1759.887887 Diff:     0.034230
+                       Angle        5048.748763   --vs--      ANGLE        5048.752467 Diff:     0.003704
+   Proper-Dih.+Improper-Dih.        3090.100293   --vs--      DIHED        3090.107426 Diff:     0.007133
                        LJ-14        2838.228322   --vs--     1-4 NB        2838.234810 Diff:     0.006488
-                  Coulomb-14       29218.375414   --vs--    1-4 EEL       29218.534303 Diff:     0.158889
-       LJ-(SR)+Disper.-corr.       57637.712089   --vs--    VDWAALS       57622.059715 Diff:   -15.652374
-   Coulomb-(SR)+Coul.-recip.     -440729.360218   --vs--      EELEC     -440716.806643 Diff:    12.553575
-                   Potential     -341136.341655   --vs--      EPTOT     -341139.266854 Diff:    -2.925199
-RMS / Max Force Difference (kJ/mol/nm):  3.807468e-01  1.617698e+00
+                  Coulomb-14       29218.375327   --vs--    1-4 EEL       29218.534303 Diff:     0.158976
+       LJ-(SR)+Disper.-corr.       57637.712098   --vs--    VDWAALS       57622.059715 Diff:   -15.652383
+   Coulomb-(SR)+Coul.-recip.     -440729.361535   --vs--      EELEC     -440716.807898 Diff:    12.553637
+                   Potential     -341136.343074   --vs--      EPTOT     -341139.230872 Diff:    -2.887798
+RMS / Max Force Difference (kJ/mol/nm):  3.828591e-01  1.617698e+00
