@@ -414,12 +414,3 @@ for fin, fout in offinout:
     pmd.modeller.offlib.AmberOFFLibrary.write(AOff,fout)
 
 Params.write('frcmod.fb15')
-# import IPython
-# IPython.embed()
-    
-
-#print AOff
-
-#import IPython
-#IPython.embed()
-#print Params
