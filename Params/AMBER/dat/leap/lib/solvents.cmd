@@ -140,7 +140,6 @@ zMatrix FB3  {
 	{  H2  O  H1 1.011811 108.14844252 }
 }
 
-
 #
 #	SPC/Fw water, JCP 124:024503 (2006)
 #
@@ -313,7 +312,6 @@ zMatrix T4E  {
 	{  EPW O  H1  H2  0.125  52.26  0.0  }
 }
 
-
 #
 #	TIP4P-FB water
 #       Wang, Martinez, Pande. 
@@ -353,9 +351,8 @@ zMatrix FB4  {
 	{  EPW O  H1  H2  0.10527  52.26  0.0  }
 }
 
-
 #
-#  OPC water (Izadi, Anandakrishnan & Onufriev, 2014, In Prep)
+#  OPC water (JPCL, 2014, 5 (21), pp 3863–3871)
 #
 
 h1 = createAtom  H1   HW  0.679142
@@ -488,7 +485,7 @@ loadOff ./nmabox.off
 loadOff ./fb3box.off
 loadOff ./fb4box.off
 
-a = { TP3 TPF SPC FB3 TP4 T4E FB4 OPC DC4 TP5 PL3 SPF SPG TIP3PBOX TIP3PFBOX TIP4PBOX TIP4PEWBOX TIP5PBOX SPCBOX QSPCFWBOX SPCFWBOX POL3BOX CHCL3BOX MEOHBOX NMABOX OPCBOX FB3BOX FB4BOX }
+a = { TP3 TPF SPC FB3 TP4 T4E FB4 OPC DC4 TP5 PL3 SPF SPG TIP3PBOX TIP3PFBOX TIP4PBOX TIP4PEWBOX OPCBOX TIP5PBOX SPCBOX QSPCFWBOX SPCFWBOX POL3BOX CHCL3BOX MEOHBOX NMABOX FB3BOX FB4BOX }
 saveOff a  ./solvents.lib
 
 quit

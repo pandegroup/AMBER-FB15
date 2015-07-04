@@ -5,32 +5,53 @@ This repository contains the following:
 1) AMBER-FB15 protein force field parameters in Gromacs, OpenMM and
 AMBER format, contained in "Params".
 
+To use the new parameters in AMBER, run the following to install
+the parameters.  Make sure AMBERHOME is set first:
+
+> cd Params/AMBER
+> rsync -avz . $AMBERHOME/
+
+To set up the system, make sure to source leaprc.fb15 instead of
+leaprc.ff99SBildn.  It will automatically use the TIP3P-FB water model
+as well.
+
+To install the new parameters in GROMACS, run the following command
+(it will install parameters to the GROMACS folder containing mdrun):
+
+> cd Params/GMX
+> rsync -avz amberfb15.ff $(dirname $(which mdrun))/../share/gromacs/top
+
+Now you can select the AMBER-FB15 and TIP3P-FB parameters from within
+pdb2gmx.
+
+To use the new parameters in OpenMM, make sure you have the
+amber-fb15.xml file, then load the force field parameters using the
+command: ForceField("amber-fb15.xml", "tip3p-fb.xml").
+
 2a) 99sc-cnv.py, a Python script to convert the AMBER-FB15 protein
 force field from the original Gromacs format that ForceBalance used
+
+To perform the conversion, run:
+
+> python 99sc-cnv.py Input/a99sc-v2-r1.itp
+
+This will create new.xml, the OpenMM force field XML file.
 for parameterization (contained in Input) to an OpenMM XML file
 
 2b) oxml-aprm.py, a Python script to convert an OpenMM XML file
 containing the AMBER-FB15 protein force field parameters to AMBER
 format
 
-To perform the first conversion, run:
-
-> python 99sc-cnv.py Input/a99sc-v2-r1.itp
-
-This will create new.xml, the OpenMM force field XML file.
-
-To perform the second conversion, run:
+To perform the conversion, run:
 
 > python oxml-aprm.py Params/OpenMM/amber-fb15.xml
 
-This will create the files to be copied to AMBER:
+This will create the AMBER force field files, leaprc command and
+associated amino acid libraries.
 
-leaprc.fb15 -> $AMBERHOME/dat/leap/cmd
-frcmod.fb15 -> $AMBERHOME/dat/leap/parm
-all_aminofb15.lib -> $AMBERHOME/dat/leap/lib
-
-Note that the solvent parameters also need to be updated, and
-these files are provided in Params/AMBER.
+Note that the solvent parameters are also needed to set up a
+simulation, and these files are provided in Params/AMBER.  This
+is because TIP3P-FB is recommended for use with AMBER-FB15.
 
 3) A script for checking the correctness of the AMBER conversion
 (compared to the original GROMACS format where the conversion was
@@ -44,10 +65,9 @@ for the sake of making a clean comparison, since they are implemented
 differently in AMBER vs. GROMACS.  The 'ildn' is just there as a reference
 to make sure the comparison passes for an existing force field.
 
-In order for these tests to work, the GROMACS and AMBER parameters 
-need to be installed. This can be done by copying the GROMACS parameter folders
-over to (Gromacs root)/share/gromacs/top/, and the AMBER parameter folders
-over to (AMBER root)/dat/leap/(cmd, lib, parm).
+In order for these tests to work, the GROMACS and AMBER parameters
+need to be installed, following the above instructions
 
-molecule.py and nifty.py are bits of ForceBalance that are used by the script.
-Including them here removes the ForceBalance dependency.
+molecule.py, nifty.py and PDB.py are bits of ForceBalance that are
+used by the script.  Including them here removes the ForceBalance
+dependency.
