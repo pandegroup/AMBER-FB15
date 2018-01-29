@@ -30,21 +30,21 @@ Constraints HBonds
 #========================================================#
 #| [92m              AMBER energy components               [0m |#
 #========================================================#
-BOND                      11.5072552 
+BOND                      11.5076736 
 ANGLE                     35.2548024 
 DIHED                     32.411356 
 1-4 NB                    23.4479728 
 1-4 EEL                   225.7987648 
 VDWAALS                   -6.6111384 
 EELEC                     -355.332476 
-EPTOT                     -33.5234632 
+EPTOT                     -33.5230448 
 ----------------------------------------------------------
-                        Bond          11.507571   --vs--       BOND          11.507255 Diff:    -0.000316
+                        Bond          11.507571   --vs--       BOND          11.507674 Diff:     0.000103
                        Angle          35.254988   --vs--      ANGLE          35.254802 Diff:    -0.000186
    Proper-Dih.+Improper-Dih.          32.411426   --vs--      DIHED          32.411356 Diff:    -0.000070
                        LJ-14          23.447727   --vs--     1-4 NB          23.447973 Diff:     0.000246
                   Coulomb-14         225.797529   --vs--    1-4 EEL         225.798765 Diff:     0.001236
        LJ-(SR)+Disper.-corr.          -6.611149   --vs--    VDWAALS          -6.611138 Diff:     0.000011
    Coulomb-(SR)+Coul.-recip.        -355.344720   --vs--      EELEC        -355.332476 Diff:     0.012244
-                   Potential         -33.536629   --vs--      EPTOT         -33.523463 Diff:     0.013166
-RMS / Max Force Difference (kJ/mol/nm):  1.799116e-01  4.185042e-01
+                   Potential         -33.536629   --vs--      EPTOT         -33.523045 Diff:     0.013584
+RMS / Max Force Difference (kJ/mol/nm):  1.191427e-01  3.560343e-01

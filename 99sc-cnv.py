@@ -78,6 +78,7 @@ NewAC = {"SER":{"CB":"6S"},
          "PRO":{"CB":"6P"},
          "CYS":{"CB":"6C"},
          "CYM":{"CB":"6c"},
+#         "CYX":{"CB":"6X"},
          "MET":{"CB":"6M"},
          "ASH":{"CB":"6d"},
          "GLH":{"CB":"6J", "CG":"6j"}}

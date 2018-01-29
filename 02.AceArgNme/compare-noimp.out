@@ -47,4 +47,4 @@ EPTOT                     -620.3357392
        LJ-(SR)+Disper.-corr.         -13.122169   --vs--    VDWAALS         -13.122279 Diff:    -0.000110
    Coulomb-(SR)+Coul.-recip.         251.944359   --vs--      EELEC         251.935794 Diff:    -0.008565
                    Potential        -620.322167   --vs--      EPTOT        -620.335739 Diff:    -0.013572
-RMS / Max Force Difference (kJ/mol/nm):  1.271307e-01  2.578121e-01
+RMS / Max Force Difference (kJ/mol/nm):  1.607798e-02  4.011061e-02
