@@ -242,8 +242,8 @@ for i, (anum_amber, anum_gro) in enumerate(zip(anumMap_amb, anumMap_gro)):
 _exec("grompp_d -f eq.mdp -o eq.tpr")
 # You can set print_to_screen=True to see how fast it's going
 _exec("mdrun_d -nt 1 -v -stepout 10 -deffnm eq", print_to_screen=False)
-_exec("trjconv_d -s eq.tpr -f eq.trr -o eq.gro -ndec 9 -pbc mol -dump 1", stdin="0\n")
-
+# LPW WARNING: This is Changed
+_exec("trjconv_d -s eq.tpr -f eq.trr -o eq.gro -ndec 9 -pbc mol -dump 0", stdin="0\n")
 # Confirm that constraints are satisfied
 OMM_eqgro = app.GromacsGroFile('eq.gro')
 OMM_prmtop = app.AmberPrmtopFile('prmtop')
@@ -273,6 +273,11 @@ parm = parmed.amber.AmberParm('prmtop', 'inpcrd')
 GmxGro = parmed.gromacs.GromacsGroFile.parse('constrained.gro')
 parm.box = GmxGro.box
 parm.positions = GmxGro.positions
+
+inpcrd_out = parmed.amber.AmberAsciiRestart("inpcrd_out", mode="w")
+inpcrd_out.coordinates = np.array(GmxGro.positions.value_in_unit(u.angstrom)).reshape(-1,3)
+inpcrd_out.box = GmxGro.box
+inpcrd_out.close()
 
 # AMBER calculation (optional)
 AMBER_Energy, AMBER_Force, Ecomps_AMBER = Calculate_AMBER(parm, mdp_opts)

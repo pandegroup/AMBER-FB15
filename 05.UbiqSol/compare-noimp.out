@@ -21,32 +21,32 @@ Angle                     1741.815353
 Proper-Dih.               1056.905492 
 LJ-14                     1069.441826 
 Coulomb-14                13980.883838 
-LJ-(SR)                   68332.454643 
+LJ-(SR)                   68332.454768 
 Disper.-corr.             -495.306847 
-Coulomb-(SR)              -388275.137267 
-Coul.-recip.              -58470.901648 
-Potential                 -360435.564102 
+Coulomb-(SR)              -388275.13762 
+Coul.-recip.              -58470.901698 
+Potential                 -360435.56438 
 ----------------------------------------------------------
 Defines: {}
 Constraints HBonds
 #========================================================#
 #| [92m              AMBER energy components               [0m |#
 #========================================================#
-BOND                      624.2938032 
+BOND                      624.2808328 
 ANGLE                     1741.815936 
-DIHED                     1056.9089432 
+DIHED                     1056.9060144 
 1-4 NB                    1069.4446256 
 1-4 EEL                   13980.9598464 
 VDWAALS                   67819.9676792 
-EELEC                     -446725.059513 
-EPTOT                     -360431.668679 
+EELEC                     -446725.059931 
+EPTOT                     -360431.684997 
 ----------------------------------------------------------
-                        Bond         624.280507   --vs--       BOND         624.293803 Diff:     0.013296
+                        Bond         624.280507   --vs--       BOND         624.280833 Diff:     0.000326
                        Angle        1741.815353   --vs--      ANGLE        1741.815936 Diff:     0.000583
-   Proper-Dih.+Improper-Dih.        1056.905492   --vs--      DIHED        1056.908943 Diff:     0.003451
+   Proper-Dih.+Improper-Dih.        1056.905492   --vs--      DIHED        1056.906014 Diff:     0.000522
                        LJ-14        1069.441826   --vs--     1-4 NB        1069.444626 Diff:     0.002800
                   Coulomb-14       13980.883838   --vs--    1-4 EEL       13980.959846 Diff:     0.076008
-       LJ-(SR)+Disper.-corr.       67837.147796   --vs--    VDWAALS       67819.967679 Diff:   -17.180117
-   Coulomb-(SR)+Coul.-recip.     -446746.038915   --vs--      EELEC     -446725.059513 Diff:    20.979402
-                   Potential     -360435.564102   --vs--      EPTOT     -360431.668679 Diff:     3.895423
-RMS / Max Force Difference (kJ/mol/nm):  3.464833e-01  1.488634e+00
+       LJ-(SR)+Disper.-corr.       67837.147921   --vs--    VDWAALS       67819.967679 Diff:   -17.180242
+   Coulomb-(SR)+Coul.-recip.     -446746.039318   --vs--      EELEC     -446725.059931 Diff:    20.979387
+                   Potential     -360435.564380   --vs--      EPTOT     -360431.684997 Diff:     3.879383
+RMS / Max Force Difference (kJ/mol/nm):  3.457253e-01  1.488633e+00

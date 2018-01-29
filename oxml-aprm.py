@@ -27,7 +27,7 @@ NewAC = {"SER":{"CB":"6S"}, "THR":{"CB":"6T", "CG2":"6t"}, "LEU":{"CB":"6L"},
          "HIE":{"CB":"6h"}, "HIP":{"CB":"6+"}, "TRP":{"CB":"6W"},
          "TYR":{"CB":"6Y"}, "PHE":{"CB":"6F"}, "GLU":{"CB":"6E", "CG":"6e"},
          "ASP":{"CB":"6D"}, "LYS":{"CB":"6K"}, "LYN":{"CB":"6k"},
-         "PRO":{"CB":"6P"}, "CYS":{"CB":"6C"}, "CYM":{"CB":"6c"},
+         "PRO":{"CB":"6P"}, "CYS":{"CB":"6C"}, "CYM":{"CB":"6c"}, #"CYX":{"CB":"6X"}, 
          "MET":{"CB":"6M"}, "ASH":{"CB":"6d"}, "GLH":{"CB":"6J", "CG":"6j"}}
 
 # Parse the original AMBER99SB XML file.
@@ -244,6 +244,68 @@ OImpPrm = OrderedDict()
 
 Params = parameters.ParameterSet()
 
+def cyc(param, do=False):
+    pnew = param
+    while pnew >  180.0000001:
+        pnew -= 360.0
+    while pnew < -179.9999999:
+        pnew += 360.0
+    if pnew != param:
+        print "%.8f -> %.8f" % (param, pnew)
+    return pnew if do else param
+
+DClassList = OrderedDict()
+def build_dclasslist(force):
+    for elem in force:
+        att = elem.attrib
+        def fillx(strin):
+            if strin == "" : return "X"
+            else: return strin
+        c1 = fillx(att['class1'])
+        c2 = fillx(att['class2'])
+        c3 = fillx(att['class3'])
+        c4 = fillx(att['class4'])
+        DC = (c1, c2, c3, c4) 
+        DCr = (c4, c3, c2, c1)
+        DCi = (c2, c3, c1, c4)
+        if (elem.tag == 'Proper'):
+            acijkl = DC
+        else:
+            # Improper dihedral atom ordering; 
+            acijkl = DCi
+        if "X" not in acijkl: continue
+        keylist = sorted([i for i in att.keys() if 'class' not in i])
+        for p in range(1, 7):
+            pkey = "periodicity%i" % p
+            kkey = "k%i" % p
+            if pkey in keylist:
+                # Wildcard is nonzero
+                if float(att[kkey]) != 0.0:
+                    DClassList.setdefault(int(att[pkey]), []).append(acijkl)
+
+def wildcard(acijkl, p):
+    for trial in [[acijkl[0], acijkl[1], acijkl[2], "X"],
+                  ["X", acijkl[1], acijkl[2], acijkl[3]],
+                  ["X", acijkl[1], acijkl[2], "X"],
+                  [acijkl[0], acijkl[1], acijkl[2], "X"][::-1],
+                  ["X", acijkl[1], acijkl[2], acijkl[3]][::-1],
+                  ["X", acijkl[1], acijkl[2], "X"][::-1]]:
+        # print trial, DClassList[p][0]
+        # raw_input()
+        if p > 0 and p in DClassList.keys() and tuple(trial) in DClassList[p]: return tuple(trial)
+    return None
+        
+        # for p in range(1, 7):
+        #     pkey = "periodicity%i" % p
+        #     fkey = "phase%i" % p
+        #     kkey = "k%i" % p
+        #     if pkey in keylist:
+                
+        #         dprms[int(att[pkey])] = (cyc(float(att[fkey])*180.0/np.pi), float(att[kkey])/4.184)
+        # dprms = OrderedDict([(p, dprms[p]) for p in sorted(dprms.keys())])
+        # # ParmEd dihedral list
+        # dihedral_list = []
+
 # Stage 1 processing: Read in force field parameters
 for force in root:
     # Top-level tags in force field XML file are:
@@ -298,6 +360,7 @@ for force in root:
             # Params.angle_types[acijk] = pmd.AngleType(k, t)
     # Periodic torsion parameters.
     if force.tag == 'PeriodicTorsionForce':
+        build_dclasslist(force)
         for elem in force:
             att = elem.attrib
             def fillx(strin):
@@ -309,20 +372,27 @@ for force in root:
             c4 = fillx(att['class4'])
             DC = (c1, c2, c3, c4) 
             DCr = (c4, c3, c2, c1)
-            if c1 > c4:
-                # Reverse ordering if class4 is alphabetically before class1
-                acijkl = DCr
-            elif c1 < c4:
-                # Forward ordering if class1 is alphabetically before class4
+            DCi = (c2, c3, c1, c4)
+            if (elem.tag == 'Proper'):
                 acijkl = DC
+                # # Proper dihedral atom ordering
+                # if c1 > c4:
+                #     # Reverse ordering if class4 is alphabetically before class1
+                #     acijkl = DCr
+                # elif c1 < c4:
+                #     # Forward ordering if class1 is alphabetically before class4
+                #     acijkl = DC
+                # else:
+                #     # If class1 and class4 are the same, order by class2/class3
+                #     if c2 > c3:
+                #         acijkl = DCr
+                #     elif c3 > c2:
+                #         acijkl = DC
+                #     else:
+                #         acijkl = DC
             else:
-                # If class1 and class4 are the same, order by class2/class3
-                if c2 > c3:
-                    acijkl = DCr
-                elif c3 > c2:
-                    acijkl = DC
-                else:
-                    acijkl = DC
+                # Improper dihedral atom ordering; 
+                acijkl = DCi
             keylist = sorted([i for i in att.keys() if 'class' not in i])
             dprms = OrderedDict()
             for p in range(1, 7):
@@ -330,17 +400,34 @@ for force in root:
                 fkey = "phase%i" % p
                 kkey = "k%i" % p
                 if pkey in keylist:
-                    dprms[int(att[pkey])] = (float(att[fkey])*180.0/np.pi, float(att[kkey])/4.184)
+                    dprms[int(att[pkey])] = (cyc(float(att[fkey])*180.0/np.pi), float(att[kkey])/4.184)
             dprms = OrderedDict([(p, dprms[p]) for p in sorted(dprms.keys())])
             # ParmEd dihedral list
             dihedral_list = []
-            for p in dprms.keys():
+            # These seemed to be printed in reverse order from gmx
+            for p in dprms.keys():#[::-1]:
                 f, k = dprms[p]
+                if k == 0:
+                    if wildcard(acijkl, p) is not None: 
+                        print acijkl, p, "is zero, used to override nonzero wildcard:", wildcard(acijkl, p)
+                    else: continue
                 dihedral_list.append(pmd.DihedralType(k, p, f, 1.2, 2.0, list=dihedral_list))
                 # Pass information to ParmEd
                 dtyp = 'normal' if (elem.tag == 'Proper') else 'improper'
                 Params._add_dihedral(acijkl[0], acijkl[1], acijkl[2], acijkl[3], 
                                      pk=k, phase=f, periodicity=p, dihtype=dtyp)
+            if wildcard(acijkl, p) is None and len(dihedral_list) == 0 and elem.tag == 'Proper':
+                print acijkl, p, "adding zero because no wildcard is defined"
+                # Add a zero-dihedral if there are none defined
+                k = 0.0
+                p = 1
+                f = 0.0
+                dihedral_list.append(pmd.DihedralType(k, p, f, 1.2, 2.0, list=dihedral_list))
+                # Pass information to ParmEd
+                dtyp = 'normal'
+                Params._add_dihedral(acijkl[0], acijkl[1], acijkl[2], acijkl[3], 
+                                     pk=k, phase=f, periodicity=p, dihtype=dtyp)
+                
             if elem.tag == 'Proper':
                 if acijkl in ODihPrm:
                     print acijkl, "already defined in ODihPrm"
@@ -414,3 +501,4 @@ for fin, fout in offinout:
     pmd.modeller.offlib.AmberOFFLibrary.write(AOff,fout)
 
 Params.write('frcmod.fb15')
+

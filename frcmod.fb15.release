@@ -1,4 +1,4 @@
-AMBER-FB15 parameter file.  Includes new atom types for amino acid side chains and new valence / torsion parameters. See Wang, Martinez, Pande, JCPL 5: 1885, 2014.
+AMBER-FB15 parameter file.  Includes new atom types for amino acid side chains and new valence / torsion parameters.  See Wang et al., J Phys Chem B. (2017) DOI: 10.1021/acs.jpcb.7b02320
 MASS
 6+    12.01078
 6c    12.01078
@@ -813,9 +813,7 @@ H1-CT-CT-OH    1    0.00000    0.00000  -3.0    SCEE=1.2 SCNB=2.0
 H1-CT-CT-OH    1    0.72834   36.55068   1.0    SCEE=1.2 SCNB=2.0
 H1-CT-CT-OS    1    0.00000    0.00000  -3.0    SCEE=1.2 SCNB=2.0
 H1-CT-CT-OS    1    0.25000    0.00000   1.0    SCEE=1.2 SCNB=2.0
-Br-CT-CT-Br    1    0.00000    0.00000  -3.0    SCEE=1.2 SCNB=2.0
-Br-CT-CT-Br    1    0.00000  180.00000  -1.0    SCEE=1.2 SCNB=2.0
-Br-CT-CT-Br    1    0.00000    0.00000   0.0    SCEE=1.2 SCNB=2.0
+Br-CT-CT-Br    1    0.00000    0.00000   3.0    SCEE=1.2 SCNB=2.0
 Cl-CT-CT-Cl    1    0.00000    0.00000  -3.0    SCEE=1.2 SCNB=2.0
 Cl-CT-CT-Cl    1    0.45000  180.00000   1.0    SCEE=1.2 SCNB=2.0
 F -CT-CT-F     1    0.00000    0.00000  -3.0    SCEE=1.2 SCNB=2.0
@@ -826,9 +824,7 @@ OS-CT-CT-OH    1    0.14400    0.00000  -3.0    SCEE=1.2 SCNB=2.0
 OS-CT-CT-OH    1    1.17500    0.00000   2.0    SCEE=1.2 SCNB=2.0
 OS-CT-CT-OS    1    0.14400    0.00000  -3.0    SCEE=1.2 SCNB=2.0
 OS-CT-CT-OS    1    1.17500    0.00000   2.0    SCEE=1.2 SCNB=2.0
-OS-CT-N*-CM    1    0.00000    0.00000  -2.0    SCEE=1.2 SCNB=2.0
 OS-CT-N*-CM    1    2.50000    0.00000   1.0    SCEE=1.2 SCNB=2.0
-OS-CT-N*-CK    1    0.00000    0.00000  -2.0    SCEE=1.2 SCNB=2.0
 OS-CT-N*-CK    1    2.50000    0.00000   1.0    SCEE=1.2 SCNB=2.0
 O -C -OS-CT    1    2.70000  180.00000  -2.0    SCEE=1.2 SCNB=2.0
 O -C -OS-CT    1    1.40000  180.00000   1.0    SCEE=1.2 SCNB=2.0
@@ -860,10 +856,8 @@ HC-CT-CM-CM    1    1.15000    0.00000   1.0    SCEE=1.2 SCNB=2.0
 HC-CT-CT-CT    1    0.14796    5.26209   3.0    SCEE=1.2 SCNB=2.0
 HC-CT-CT-HC    1    0.16278  -18.51930   3.0    SCEE=1.2 SCNB=2.0
 HC-CT-C -O     1   -0.02665  160.56772  -3.0    SCEE=1.2 SCNB=2.0
-HC-CT-C -O     1    0.00000    0.00000  -2.0    SCEE=1.2 SCNB=2.0
 HC-CT-C -O     1    0.88962   -3.56908   1.0    SCEE=1.2 SCNB=2.0
 H1-CT-C -O     1   -0.01122  180.83857  -3.0    SCEE=1.2 SCNB=2.0
-H1-CT-C -O     1    0.00000    0.00000  -2.0    SCEE=1.2 SCNB=2.0
 H1-CT-C -O     1    0.34682   38.27262   1.0    SCEE=1.2 SCNB=2.0
 OS-P -OS-CT    1    0.25000    0.00000  -3.0    SCEE=1.2 SCNB=2.0
 OS-P -OS-CT    1    1.20000    0.00000   2.0    SCEE=1.2 SCNB=2.0
@@ -880,8 +874,6 @@ X -CV-NB-X     1    2.41055  178.47946   2.0    SCEE=1.2 SCNB=2.0
 X -CR-NB-X     1    5.02465  175.12669   2.0    SCEE=1.2 SCNB=2.0
 X -CR-NA-X     1    2.47285  202.06099   2.0    SCEE=1.2 SCNB=2.0
 X -C*-CW-X     1    6.38343  182.69825   2.0    SCEE=1.2 SCNB=2.0
-X -C*-CT-X     1    0.00000    0.00000  -2.0    SCEE=1.2 SCNB=2.0
-X -C*-CT-X     1    0.00000    0.00000   0.0    SCEE=1.2 SCNB=2.0
 X -C*-CB-X     1    1.60359  183.15683   2.0    SCEE=1.2 SCNB=2.0
 X -CT-SH-X     1    0.37611    0.94733   3.0    SCEE=1.2 SCNB=2.0
 X -CT-S -X     1    0.20354    5.44856   3.0    SCEE=1.2 SCNB=2.0
@@ -889,33 +881,20 @@ X -CT-OS-X     1    0.38333    0.00000   3.0    SCEE=1.2 SCNB=2.0
 X -CT-OH-X     1    0.39226   -1.28609   3.0    SCEE=1.2 SCNB=2.0
 X -CT-N3-X     1    0.19337    4.95694   3.0    SCEE=1.2 SCNB=2.0
 X -CT-NT-X     1    0.30000    0.00000   3.0    SCEE=1.2 SCNB=2.0
-X -CT-N2-X     1    0.00000    0.00000  -3.0    SCEE=1.2 SCNB=2.0
-X -CT-N2-X     1    0.00000    0.00000   0.0    SCEE=1.2 SCNB=2.0
-X -CT-N*-X     1    0.00000    0.00000  -2.0    SCEE=1.2 SCNB=2.0
-X -CT-N*-X     1    0.00000    0.00000   0.0    SCEE=1.2 SCNB=2.0
-X -CT-N -X     1    0.00000    0.00000  -2.0    SCEE=1.2 SCNB=2.0
-X -CT-N -X     1    0.00000    0.00000   0.0    SCEE=1.2 SCNB=2.0
-X -CT-CZ-X     1    0.00000    0.00000   1.0    SCEE=1.2 SCNB=2.0
-X -CT-CY-X     1    0.00000    0.00000   1.0    SCEE=1.2 SCNB=2.0
 X -CT-CT-X     1    0.17935    3.79679   3.0    SCEE=1.2 SCNB=2.0
 X -CQ-NC-X     1    6.80000  180.00000   2.0    SCEE=1.2 SCNB=2.0
 X -CN-NA-X     1    1.49960  190.91320   2.0    SCEE=1.2 SCNB=2.0
 X -CM-OS-X     1    1.05000  180.00000   2.0    SCEE=1.2 SCNB=2.0
 X -CM-N*-X     1    1.85000  180.00000   2.0    SCEE=1.2 SCNB=2.0
-X -CM-CT-X     1    0.00000    0.00000  -3.0    SCEE=1.2 SCNB=2.0
-X -CM-CT-X     1    0.00000    0.00000   0.0    SCEE=1.2 SCNB=2.0
 X -CM-CM-X     1    6.65000  180.00000   2.0    SCEE=1.2 SCNB=2.0
 X -CK-NB-X     1   10.00000  180.00000   2.0    SCEE=1.2 SCNB=2.0
 X -CK-N*-X     1    1.70000  180.00000   2.0    SCEE=1.2 SCNB=2.0
 X -CD-CM-X     1    6.65000  180.00000   2.0    SCEE=1.2 SCNB=2.0
-X -CD-CT-X     1    0.00000    0.00000   2.0    SCEE=1.2 SCNB=2.0
 X -CD-CD-X     1    1.00000  180.00000   2.0    SCEE=1.2 SCNB=2.0
 X -CC-NB-X     1    2.42891  165.62576   2.0    SCEE=1.2 SCNB=2.0
 X -CC-NA-X     1    1.80425  186.11929   2.0    SCEE=1.2 SCNB=2.0
 X -CC-CW-X     1    5.52361  167.71666   2.0    SCEE=1.2 SCNB=2.0
 X -CC-CV-X     1    5.12387  168.30351   2.0    SCEE=1.2 SCNB=2.0
-X -CC-CT-X     1    0.00000    0.00000  -2.0    SCEE=1.2 SCNB=2.0
-X -CC-CT-X     1    0.00000    0.00000   0.0    SCEE=1.2 SCNB=2.0
 X -CB-NC-X     1    4.15000  180.00000   2.0    SCEE=1.2 SCNB=2.0
 X -CB-NB-X     1    2.55000  180.00000   2.0    SCEE=1.2 SCNB=2.0
 X -CB-N*-X     1    1.65000  180.00000   2.0    SCEE=1.2 SCNB=2.0
@@ -925,8 +904,6 @@ X -CA-OH-X     1    0.90000  180.00000   2.0    SCEE=1.2 SCNB=2.0
 X -CA-NC-X     1    4.80000  180.00000   2.0    SCEE=1.2 SCNB=2.0
 X -CA-NA-X     1    1.50000  180.00000   2.0    SCEE=1.2 SCNB=2.0
 X -CA-N2-X     1    1.70322  187.57404   2.0    SCEE=1.2 SCNB=2.0
-X -CA-CT-X     1    0.00000    0.00000  -2.0    SCEE=1.2 SCNB=2.0
-X -CA-CT-X     1    0.00000    0.00000   0.0    SCEE=1.2 SCNB=2.0
 X -CA-CN-X     1    3.61790  176.97000   2.0    SCEE=1.2 SCNB=2.0
 X -CA-CM-X     1    2.55000  180.00000   2.0    SCEE=1.2 SCNB=2.0
 X -CA-CB-X     1    3.50241  174.97344   2.0    SCEE=1.2 SCNB=2.0
@@ -938,8 +915,6 @@ X -C -NC-X     1    4.00000  180.00000   2.0    SCEE=1.2 SCNB=2.0
 X -C -NA-X     1    1.35000  180.00000   2.0    SCEE=1.2 SCNB=2.0
 X -C -N*-X     1    1.45000  180.00000   2.0    SCEE=1.2 SCNB=2.0
 X -C -N -X     1    1.86422  181.51210   2.0    SCEE=1.2 SCNB=2.0
-X -C -CT-X     1    0.00000    0.00000  -2.0    SCEE=1.2 SCNB=2.0
-X -C -CT-X     1    0.00000    0.00000   0.0    SCEE=1.2 SCNB=2.0
 X -C -CM-X     1    2.17500  180.00000   2.0    SCEE=1.2 SCNB=2.0
 X -C -CB-X     1    3.00000  180.00000   2.0    SCEE=1.2 SCNB=2.0
 X -C -CA-X     1    3.58712  177.20947   2.0    SCEE=1.2 SCNB=2.0
@@ -1348,19 +1323,14 @@ HC-6V-CT-HC    1    0.16278  -18.51930   3.0    SCEE=1.2 SCNB=2.0
 HC-6J-6j-HC    1    0.16278  -18.51930   3.0    SCEE=1.2 SCNB=2.0
 HC-6k-CT-HC    1    0.16278  -18.51930   3.0    SCEE=1.2 SCNB=2.0
 HC-6d-C -O     1   -0.02665  160.56772  -3.0    SCEE=1.2 SCNB=2.0
-HC-6d-C -O     1    0.00000    0.00000  -2.0    SCEE=1.2 SCNB=2.0
 HC-6d-C -O     1    0.88962   -3.56908   1.0    SCEE=1.2 SCNB=2.0
 HC-6N-C -O     1   -0.02665  160.56772  -3.0    SCEE=1.2 SCNB=2.0
-HC-6N-C -O     1    0.00000    0.00000  -2.0    SCEE=1.2 SCNB=2.0
 HC-6N-C -O     1    0.88962   -3.56908   1.0    SCEE=1.2 SCNB=2.0
 HC-6q-C -O     1   -0.02665  160.56772  -3.0    SCEE=1.2 SCNB=2.0
-HC-6q-C -O     1    0.00000    0.00000  -2.0    SCEE=1.2 SCNB=2.0
 HC-6q-C -O     1    0.88962   -3.56908   1.0    SCEE=1.2 SCNB=2.0
 HC-6j-C -O     1   -0.02665  160.56772  -3.0    SCEE=1.2 SCNB=2.0
-HC-6j-C -O     1    0.00000    0.00000  -2.0    SCEE=1.2 SCNB=2.0
 HC-6j-C -O     1    0.88962   -3.56908   1.0    SCEE=1.2 SCNB=2.0
-X -C*-6W-X     1    0.00000    0.00000  -2.0    SCEE=1.2 SCNB=2.0
-X -C*-6W-X     1    0.00000    0.00000   0.0    SCEE=1.2 SCNB=2.0
+X -C*-6W-X     1    0.00000    0.00000   1.0    SCEE=1.2 SCNB=2.0
 X -6C-SH-X     1    0.37611    0.94733   3.0    SCEE=1.2 SCNB=2.0
 X -6S-OH-X     1    0.39226   -1.28609   3.0    SCEE=1.2 SCNB=2.0
 X -6T-OH-X     1    0.39226   -1.28609   3.0    SCEE=1.2 SCNB=2.0
@@ -1393,28 +1363,17 @@ X -6c-CT-X     1    0.17935    3.79679   3.0    SCEE=1.2 SCNB=2.0
 X -6J-6j-X     1    0.17935    3.79679   3.0    SCEE=1.2 SCNB=2.0
 X -6J-CT-X     1    0.17935    3.79679   3.0    SCEE=1.2 SCNB=2.0
 X -6k-CT-X     1    0.17935    3.79679   3.0    SCEE=1.2 SCNB=2.0
-X -CC-6H-X     1    0.00000    0.00000  -2.0    SCEE=1.2 SCNB=2.0
-X -CC-6H-X     1    0.00000    0.00000   0.0    SCEE=1.2 SCNB=2.0
-X -CC-6h-X     1    0.00000    0.00000  -2.0    SCEE=1.2 SCNB=2.0
-X -CC-6h-X     1    0.00000    0.00000   0.0    SCEE=1.2 SCNB=2.0
-X -CC-6+-X     1    0.00000    0.00000  -2.0    SCEE=1.2 SCNB=2.0
-X -CC-6+-X     1    0.00000    0.00000   0.0    SCEE=1.2 SCNB=2.0
-X -CA-6F-X     1    0.00000    0.00000  -2.0    SCEE=1.2 SCNB=2.0
-X -CA-6F-X     1    0.00000    0.00000   0.0    SCEE=1.2 SCNB=2.0
-X -CA-6Y-X     1    0.00000    0.00000  -2.0    SCEE=1.2 SCNB=2.0
-X -CA-6Y-X     1    0.00000    0.00000   0.0    SCEE=1.2 SCNB=2.0
-X -C -6d-X     1    0.00000    0.00000  -2.0    SCEE=1.2 SCNB=2.0
-X -C -6d-X     1    0.00000    0.00000   0.0    SCEE=1.2 SCNB=2.0
-X -C -6N-X     1    0.00000    0.00000  -2.0    SCEE=1.2 SCNB=2.0
-X -C -6N-X     1    0.00000    0.00000   0.0    SCEE=1.2 SCNB=2.0
-X -C -6D-X     1    0.00000    0.00000  -2.0    SCEE=1.2 SCNB=2.0
-X -C -6D-X     1    0.00000    0.00000   0.0    SCEE=1.2 SCNB=2.0
-X -C -6q-X     1    0.00000    0.00000  -2.0    SCEE=1.2 SCNB=2.0
-X -C -6q-X     1    0.00000    0.00000   0.0    SCEE=1.2 SCNB=2.0
-X -C -6e-X     1    0.00000    0.00000  -2.0    SCEE=1.2 SCNB=2.0
-X -C -6e-X     1    0.00000    0.00000   0.0    SCEE=1.2 SCNB=2.0
-X -C -6j-X     1    0.00000    0.00000  -2.0    SCEE=1.2 SCNB=2.0
-X -C -6j-X     1    0.00000    0.00000   0.0    SCEE=1.2 SCNB=2.0
+X -CC-6H-X     1    0.00000    0.00000   1.0    SCEE=1.2 SCNB=2.0
+X -CC-6h-X     1    0.00000    0.00000   1.0    SCEE=1.2 SCNB=2.0
+X -CC-6+-X     1    0.00000    0.00000   1.0    SCEE=1.2 SCNB=2.0
+X -CA-6F-X     1    0.00000    0.00000   1.0    SCEE=1.2 SCNB=2.0
+X -CA-6Y-X     1    0.00000    0.00000   1.0    SCEE=1.2 SCNB=2.0
+X -C -6d-X     1    0.00000    0.00000   1.0    SCEE=1.2 SCNB=2.0
+X -C -6N-X     1    0.00000    0.00000   1.0    SCEE=1.2 SCNB=2.0
+X -C -6D-X     1    0.00000    0.00000   1.0    SCEE=1.2 SCNB=2.0
+X -C -6q-X     1    0.00000    0.00000   1.0    SCEE=1.2 SCNB=2.0
+X -C -6e-X     1    0.00000    0.00000   1.0    SCEE=1.2 SCNB=2.0
+X -C -6j-X     1    0.00000    0.00000   1.0    SCEE=1.2 SCNB=2.0
 CA-6F-CT-N     1   -0.06619   -6.93740  -6.0    SCEE=1.2 SCNB=2.0
 CA-6F-CT-N     1    0.34564  -19.84422  -5.0    SCEE=1.2 SCNB=2.0
 CA-6F-CT-N     1    0.07942    7.35361  -4.0    SCEE=1.2 SCNB=2.0
