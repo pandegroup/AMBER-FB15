@@ -3,8 +3,13 @@
 Please see our paper at doi:10.1021/acs.jpcb.7b02320.
 
 Note: If you downloaded files from this repository for running
-simulations prior to January 28, 2018, the AMBER parameter file may
-have contained a mistake because this repo had a pre-release version
+simulations prior to the latest batch of commits on January 28, 2018,
+the repo contained a pre-release frcmod.fb15 parameter file with an
+error that could affect simulation results. The current version of
+frcmod.fb15 in this repo is fixed. Also, the frcmod.fb15 files
+distributed with ForceBalance and on SimTK have been correct
+since the initial release.
+
 of the file. On the other hand, the parameters distributed with
 ForceBalance and on SimTK do not have this mistake.
 
