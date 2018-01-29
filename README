@@ -1,5 +1,13 @@
 # AMBER-FB15
 
+Please see our paper at doi:10.1021/acs.jpcb.7b02320.
+
+Note: If you downloaded files from this repository for running
+simulations prior to January 28, 2018, the AMBER parameter file may
+have contained a mistake because this repo had a pre-release version
+of the file. On the other hand, the parameters distributed with
+ForceBalance and on SimTK do not have this mistake.
+
 This repository contains the following:
 
 1) AMBER-FB15 protein force field parameters in Gromacs, OpenMM and
