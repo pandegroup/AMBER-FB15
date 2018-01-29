@@ -3,14 +3,14 @@
 This repository contains the following:
 
 1) AMBER-FB15 protein force field parameters in Gromacs, OpenMM and
-AMBER format, contained in "Params".  These improved force field
+AMBER format, contained in "FinalParams".  These improved force field
 parameters were derived using ForceBalance and recommended for use
 with the TIP3P-FB water model (also included).
 
 To use the new parameters in AMBER, run the following to install
 the parameters.  Make sure AMBERHOME is set first:
 
-> cd Params/AMBER
+> cd FinalParams/AMBER
 > rsync -avz . $AMBERHOME/
 
 To set up the system, make sure to source leaprc.fb15 instead of
@@ -20,7 +20,7 @@ as well.
 To install the new parameters in GROMACS, run the following command
 (it will install parameters to the GROMACS folder containing mdrun):
 
-> cd Params/GMX
+> cd FinalParams/GMX
 > rsync -avz amberfb15.ff $(dirname $(which mdrun))/../share/gromacs/top
 
 Now you can select the AMBER-FB15 and TIP3P-FB parameters from within
@@ -46,13 +46,13 @@ format
 
 To perform the conversion, run:
 
-> python oxml-aprm.py Params/OpenMM/amber-fb15.xml
+> python oxml-aprm.py FinalParams/OpenMM/amber-fb15.xml
 
 This will create the AMBER force field files, leaprc command and
 associated amino acid libraries.
 
 Note that the solvent parameters are also needed to set up a
-simulation, and these files are provided in Params/AMBER.  This
+simulation, and these files are provided in FinalParams/AMBER.  This
 is because TIP3P-FB is recommended for use with AMBER-FB15.
 
 3) A script for checking the correctness of the AMBER conversion
