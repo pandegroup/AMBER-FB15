@@ -10,9 +10,6 @@ frcmod.fb15 in this repo is fixed. Also, the frcmod.fb15 files
 distributed with ForceBalance and on SimTK have been correct
 since the initial release.
 
-of the file. On the other hand, the parameters distributed with
-ForceBalance and on SimTK do not have this mistake.
-
 This repository contains the following:
 
 1) AMBER-FB15 protein force field parameters in Gromacs, OpenMM and
